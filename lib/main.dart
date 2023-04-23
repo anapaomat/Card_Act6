@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final String title;
-  const MyHomePage({super.key, required this.title});  
+  const MyHomePage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +32,65 @@ class MyHomePage extends StatelessWidget {
         // The title text which will be shown on the action bar
         title: Text(title),
       ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      body: Card(
+        child: Container(
+          height: 100,
+          color: Colors.white,
+          child: Row(
+            children: [
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Expanded(
+                    child: Image.asset("assets/images/logo3.png"),
+                    flex: 2,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 5,
+                        child: ListTile(
+                          title: Text("Shape Of You"),
+                          subtitle: Text("Ed Sheeran"),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 5,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            TextButton(
+                              child: Text("PLAY"),
+                              onPressed: () {},
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            TextButton(
+                              child: Text("ADD TO QUEUE"),
+                              onPressed: () {},
+                            ),
+                            SizedBox(
+                              width: 8,
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                flex: 8,
+              ),
+            ],
+          ),
         ),
+        elevation: 8,
+        margin: EdgeInsets.all(10),
       ),
     );
   }
